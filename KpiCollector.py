@@ -14,6 +14,8 @@ _path = "C:\\Users\\MikaelE\\Desktop\\KPI\\"
 
 # KStalle mapping
 # SELECT TOP (1000) * FROM [boka100].[dbo].[Kställe]
+
+
 def _thekpi(_cursor):
     _targets = [('Dec-17', 4501760), ('Nov-17', 3820593), ('Oct-17', 4361450), ('Sep-17', 4310718), ('Aug-17', 3406248), ('Jul-17', 2354235), ('Jun-17', 3931161), ('May-17', 3806196), ('Apr-17', 3639404), ('Mar-17', 3833141), ('Feb-17', 2891047), ('Jan-17', 2765652), ('Dec-16', 2765652), ('Nov-16', 2765652)]
     grand_result = []
@@ -120,7 +122,6 @@ def _thekpi(_cursor):
     print(part2, file=f)
     print(part3, file=f)
     f.close()
-
 
 
 #
