@@ -1,1 +1,2 @@
-python C:\Users\MikaelE\PycharmProjects\Kpi\KpiCollector.py
+mkdir C:\KPI
+python C:\Kpi\KpiCollector.py

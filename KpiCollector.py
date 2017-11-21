@@ -10,7 +10,7 @@ from dateutil.relativedelta import *
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 logger.setLevel(logging.DEBUG)
 
-_path = "C:\\Users\\MikaelE\\Desktop\\KPI\\"
+_path = "C:\\KPI\\"
 
 # KStalle mapping
 # SELECT TOP (1000) * FROM [boka100].[dbo].[Kställe]
@@ -651,8 +651,8 @@ def _kpi6(_cursor):
     print(part3, file=f)
     f.close()
 
-# Main
-sqlserver = pypyodbc.connect("Driver={SQL Server};Server=fdtvm01;Database=Fakt100;uid=FDT;pwd=kab10mvTDF") # TODO - usr,pwd from config file
+# Main fdtvm01
+sqlserver = pypyodbc.connect("Driver={SQL Server};Server=192.168.1.204;Database=Fakt100;uid=FDT;pwd=kab10mvTDF") # TODO - usr,pwd from config file
 cursor = sqlserver.cursor()
 
 _thekpi(cursor)
