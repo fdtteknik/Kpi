@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+  <div id="hidden_div">
+    <form action="javascript:void(0);" id="the_form">
+      <input type="file" id="the_file" required="required" accept=".csv"/>
+      <input type="submit" value="Rotate!"/>
+    </form>
+    <div id="file_info"></div>
+    <div id="list"></div>
+  </div>
+<script type="text/javascript">
+var arr=[];
+var urls=[];
+var times=[];
+var idx=0;
+ function fileInfo(e){             // CSV file selector
+   var file = e.target.files[0];
+     return;
+  }
+ function handleFileSelect(){   // Function for CSV file parsing and filling arrays
+  var file = document.getElementById("the_file").files[0];
+  var reader = new FileReader();
+  reader.onload = function(file) {  // Read the CSV file and split it into arrays
+              var content = file.target.result; // Results from the FileReader
+              var rows = file.target.result.split(/[\r\n|\n]+/);  // Split the contents of the file into rows based on carriage returns
+              for (var i = 1; i < rows.length; i++){  // For each row, split the contents into columns separated by commas (i starts at 1 to skip column headers in CSV)
+                arr = rows[i].split(',');
+                for (var j = 0; j < arr.length; j++){ // Split the URL's and times into separate arrays
+                 urls.push(arr[j]);
+                 j++;
+                 times.push(arr[j]);
+                }
+              }
+          showUrl();
+          };
+  reader.readAsText(file);
+  };
+
+  function showUrl() {    //Function for displaying the URLs for the specified time
+    var f = document.getElementById("f");
+    f.onload = function()   {
+       var nextUrl = urls[(idx+1) % urls.length];   //retrieves the next URL to display
+       var thisTime = times[idx % times.length]*1000;    // retreives the time to display the current
+       setTimeout(function(){   //timeout is set to wait for the specified amount of time, then run the function again with the next URL
+          showUrl();
+       }, thisTime);
+              idx++;
+    }
+    f.src = urls[idx % urls.length];    // set's the src URL for the iframe
+  };
+
+ function showHide() {    // this function hides the div containing the file selector after the file is submitted (uses the event listener below)
+   var div = document.getElementById("hidden_div");
+   if (div.style.display == 'none') {
+     div.style.display = '';
+   }
+   else {
+     div.style.display = 'none';
+   }
+ }
+ document.getElementById('the_form').addEventListener('submit', handleFileSelect, false);
+ document.getElementById('the_file').addEventListener('change', fileInfo, false);
+ document.getElementById('the_form').addEventListener('submit', showHide, false);
+
+
+</script>
+<iframe style="border: 0px" scrolling="no" id="f" src="about:blank" width="100%" height="1050"></iframe>
+</iframe>
+<br><br>
+</body>
+</html>
+
