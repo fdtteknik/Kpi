@@ -10,7 +10,9 @@ from dateutil.relativedelta import *
 logger = logging.getLogger(os.path.basename(sys.argv[0]))
 logger.setLevel(logging.DEBUG)
 
-_path = "C:\\KPI\\"
+#_path = "C:\\KPI\\"
+#_path = "http://10.124.0.81/"
+
 
 # KStalle mapping
 # SELECT TOP (1000) * FROM [boka100].[dbo].[Kställe]
