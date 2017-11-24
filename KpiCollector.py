@@ -12,6 +12,7 @@ logger.setLevel(logging.DEBUG)
 
 #_path = "C:\\KPI\\"
 #_path = "http://10.124.0.81/"
+_path = "http://10.124.0.81/"
 
 
 # KStalle mapping
