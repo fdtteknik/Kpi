@@ -13,7 +13,7 @@ logger.setLevel(logging.DEBUG)
 #_path = "C:\\KPI\\"
 #_path = "http://10.124.0.81/"
 #_path = "http://10.124.0.81/"
-_path = "C:\\inetpub\\wwwroot"
+_path = "C:\\inetpub\\wwwroot\"
 
 # KStalle mapping
 # SELECT TOP (1000) * FROM [boka100].[dbo].[Kställe]
