@@ -46,26 +46,26 @@ def _thekpi(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            if row[0] == '2':
-                salj = salj + row[1]
-            elif row[0] == '3':
-                supp = supp + row[1]
-            elif row[0] == '4':
-                utv = utv + row[1]
-            elif row[0] == '5':
-                tekn = tekn + row[1]
-            elif row[0] == '7':
-                kons = kons + row[1]
-            elif row[0] == '9':
-                squ = squ + row[1]
-            else:
-                misc = misc + row[1]
+                for row in dbl:
+                    if row[0] == '2':
+                        salj = salj + row[1]
+                    elif row[0] == '3':
+                        supp = supp + row[1]
+                    elif row[0] == '4':
+                        utv = utv + row[1]
+                    elif row[0] == '5':
+                        tekn = tekn + row[1]
+                    elif row[0] == '7':
+                        kons = kons + row[1]
+                    elif row[0] == '9':
+                        squ = squ + row[1]
+                    else:
+                        misc = misc + row[1]
 
-        result.append("%d, %d, %d, %d, %d, %d, %d, %d" % (misc, salj, supp, utv, tekn, kons, squ, target_value))
+                result.append("%d, %d, %d, %d, %d, %d, %d, %d" % (misc, salj, supp, utv, tekn, kons, squ, target_value))
 
-        logger.warning(result)
-        grand_result.append(result)
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path+ "thekpi.js", "w")
@@ -157,11 +157,11 @@ def _kpi1(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            total = total + row[1]
-        result.append("%d, %d" % (total, target_value))
-        logger.warning(result)
-        grand_result.append(result)
+                for row in dbl:
+                    total = total + row[1]
+                result.append("%d, %d" % (total, target_value))
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path + "kpi1.js", "w")
@@ -250,11 +250,11 @@ def _kpi2(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            total = total + row[1]
-        result.append("%d, %d" % (total, target_value))
-        logger.warning(result)
-        grand_result.append(result)
+                for row in dbl:
+                    total = total + row[1]
+                result.append("%d, %d" % (total, target_value))
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path+"kpi2.js", "w")
@@ -341,11 +341,11 @@ def _kpi3(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            total = total + row[1]
-        result.append("%d, %d" % (total, target_value))
-        logger.warning(result)
-        grand_result.append(result)
+                for row in dbl:
+                    total = total + row[1]
+                result.append("%d, %d" % (total, target_value))
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path+"kpi3.js", "w")
@@ -433,11 +433,11 @@ def _kpi4(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            total = total + row[1]
-        result.append("%d, %d" % (total, target_value))
-        logger.warning(result)
-        grand_result.append(result)
+                for row in dbl:
+                    total = total + row[1]
+                result.append("%d, %d" % (total, target_value))
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path+"kpi4.js", "w")
@@ -525,11 +525,11 @@ def _kpi5(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            total = total + row[1]
-        result.append("%d, %d" % (total, target_value))
-        logger.warning(result)
-        grand_result.append(result)
+                for row in dbl:
+                    total = total + row[1]
+                result.append("%d, %d" % (total, target_value))
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path+"kpi5.js", "w")
@@ -617,11 +617,11 @@ def _kpi6(_cursor):
         for target in _targets:
             if result[0] == target[0]:
                 target_value = target[1]
-        for row in dbl:
-            total = total + row[1]
-        result.append("%d, %d" % (total, target_value))
-        logger.warning(result)
-        grand_result.append(result)
+                for row in dbl:
+                    total = total + row[1]
+                result.append("%d, %d" % (total, target_value))
+                logger.warning(result)
+                grand_result.append(result)
 
     # Write the result to the kpi1.js file
     f = open(_path+"kpi6.js", "w")
